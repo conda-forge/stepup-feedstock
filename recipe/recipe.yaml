@@ -12,7 +12,7 @@ source:
   sha256: a1a88f8ea035dcb0dda59dd244c451186024e2d678389d0315253e015478c8b6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -55,21 +55,17 @@ requirements:
 # The `if: unix` guards make the build pass on Windows in the staged-recipes CI.
 # They will be removed once the stepup feedstock has been created.
 tests:
-  - if: unix
-    then:
-      python:
-        imports:
-          - stepup.core
-        pip_check: true
-        python_version:
-          - ${{ python_min }}.*
-          - "*"
-  - if: unix
-    then:
-      script:
-        - stepup --help
-        - sb --help
-        - sc-render-jinja --help
+  - python:
+      imports:
+        - stepup.core
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - script:
+    - stepup --help
+    - sb --help
+    - sc-render-jinja --help
 
 about:
   summary: A dynamic Python build tool for reproducible workflows
