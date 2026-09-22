@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.0.2"
+  version: "4.0.3"
 
 package:
   name: stepup
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/stepup/stepup-${{ version }}.tar.gz
-  sha256: a1a88f8ea035dcb0dda59dd244c451186024e2d678389d0315253e015478c8b6
+  sha256: bf96561badb8bb22dfb0971021b3aced4f19ffdd4249b8778a974f8c75f8b733
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -63,9 +63,9 @@ tests:
         - ${{ python_min }}.*
         - "*"
   - script:
-    - stepup --help
-    - sb --help
-    - sc-render-jinja --help
+      - stepup --help
+      - sb --help
+      - sc-render-jinja --help
 
 about:
   summary: A dynamic Python build tool for reproducible workflows
