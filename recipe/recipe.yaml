@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "4.0.3"
+  version: "4.1.0"
 
 package:
   name: stepup
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/stepup/stepup-${{ version }}.tar.gz
-  sha256: bf96561badb8bb22dfb0971021b3aced4f19ffdd4249b8778a974f8c75f8b733
+  sha256: 317bb40c09f9e3ef0a4267a3d264d6086c064bce0f00c522856c0ea524e6b434
 
 build:
   number: 0
